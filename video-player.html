@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="video-player.css">
+        <title>Video Player</title>
+    </head>
+    <body>
+        <div class="main-div">
+            <div class="video-div">
+                <video class="video" src="media/wide_720p.mp4" onclick="playPause()" ondblclick="toggleFullscreen()"></video>
+                <div id="res-div">
+                    <button id="btn-720" onclick="changeResolution('720p')">720p</button>
+                    <button id="btn-480" onclick="changeResolution('480p')">480p</button>
+                </div>
+                <div class="controls">
+                    <div class="bar">
+                        <input type="range" min="0" max="100" value="0" class="progress-bar" oninput="changeCurrentTime()">
+                    </div>
+                    <div class="buttons">
+                        <div id="left">
+                            <button id="btn-play-pause" onclick="playPause()">
+                                <i id="icon-play-pause" class="fas fa-play"></i>
+                            </button>
+                            <button id="btn-mute-unmute" onclick="muteUnmute()">
+                                <i id="icon-mute-unmute" class="fas fa-volume-up"></i>
+                            </button>
+                            <div id="volume-slider">
+                                <input type="range" min="0" max="100" value="100" class="volume-bar" oninput="changeVolume()">
+                            </div>
+                        </div>
+                        <div id="right">
+                            <button id="btn-resolution" onclick="changeDisplay()">
+                                <i id="icon-resolution" class="fas fa-cog"></i>
+                            </button>
+                            <button id="btn-standard-format" onclick="changeFormat('standard')">
+                                <p id="s">4:3</p>
+                            </button>
+                            <button id="btn-wide-format" onclick="changeFormat('wide')">
+                                <p id="w">16:9</p>
+                            </button>
+                            <button id="btn-fullscreen" onclick="toggleFullscreen()">
+                                <i id="icon-fullscreen" class="fas fa-expand"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="video-player.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    </body>
+</html>
